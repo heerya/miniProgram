@@ -1,0 +1,71 @@
+<!--pages/activity/activity.wxml-->
+<view class='page-wrap'>
+  <text class='title'>{{activity.title}}</text>
+  <view class='author-wrap'>
+    <image src='{{activity.author.avatarUrl}}'></image>
+    <view class='author-right'>
+      <view class='name'>
+        <text>{{activity.author.nickName}}</text>
+      </view>
+      <view class='time'>
+        <text>{{activity.edit_time}}</text>
+      </view>
+    </view>
+  </view>
+  <view class='content'>
+    <image wx:if='{{activity.img_id.length<2}}' src='{{activity.img_id[0]}}' mode='widthFix'></image>
+    <view wx:else>
+      <swiper class='acSwiper' indicator-dots="{{true}}" autoplay="{{true}}" interval="5000" duration="1000">
+        <block wx:for="{{activity.img_id}}" wx:key='id'>
+          <swiper-item class='acSwiperItem'>
+            <image src="{{item}}" class="slide-image" mode='aspectFit' height="150" />
+          </swiper-item>
+        </block>
+      </swiper>
+    </view>
+    <view class='money-wrap' wx:if='{{activity.money}}'>
+      <text class='left'>价格：</text>
+      <text class='right'>{{activity.money}}¥</text>
+    </view>
+    <view class='time-wrap' wx:if='{{activity.start_time}}'>
+      <text class='left'>起始时间：</text>
+      <text class='right'>{{activity.start_time}}</text>
+    </view>
+    <view class='time-wrap' wx:if='{{activity.end_time}}'>
+      <text class='left'>结束时间：</text>
+      <text class='right'>{{activity.end_time}}</text>
+    </view>
+    <text>{{activity.maintext}}</text>
+  </view>
+
+  <view class='aclike-wrap'>
+    <text class='taplike'>点个小心心吧➡️</text>
+    <image wx:if="{{activity.like}}" class='like-icon' src='../../pages/mhome/img/like.png' bindtap='likeActivity' id='{{activity._id}}'></image>
+      <image wx:else class='like-icon' src='../../pages/mhome/img/like1.png' bindtap='likeActivity' id='{{activity._id}}'></image>
+      <text class='likenum' wx:if="{{activity.likenum && activity.likenum!=0}}">{{activity.likenum}}</text>
+  </view>
+
+  <view class='new-comment-wrap' wx:if="{{commentL.length!=0}}">
+    <view class='line'></view>
+    <text class='title'>最新评论</text>
+    <view class='hot-comment' wx:for="{{commentL}}" wx:key="id">
+      <view class='user-wrap'>
+        <image class='user-image' src='{{item.author.avatarUrl}}'></image>
+      </view>
+      <view class='comment'>
+        <text class='username'>{{item.author.nickName}}</text>
+        <text class='usertime'>{{item.ctime}}1</text>
+        <text>{{item.ctext}}</text>
+      </view>
+      <view class='like-wrap'>
+        <image wx:if="{{item.like}}" class='like-icon' src='../mhome/img/like.png' bindtap='likeComActivity' id='{{item._id}}'></image>
+        <image wx:else class='like-icon' src='../mhome/img/like1.png' bindtap='likeComActivity' id='{{item._id}}'></image>
+        <text wx:if="{{item.likenum && item.likenum!=0}}">{{item.likenum}}</text>
+      </view>
+    </view>
+  </view>
+  <button class='join-btn' bindtap='toSignUp'>报名</button>
+  <view class='w-comment-wrap'>
+    <input type='text' placeholder='写评论...' type='text' confirm-type='send' bindconfirm='writeComment'></input>
+  </view>
+</view>

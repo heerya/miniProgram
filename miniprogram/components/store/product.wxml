@@ -1,0 +1,10 @@
+<!--components/store/product.wxml-->
+<view class='product'>
+  <image class='mainimg' src='{{item.img_id[0]}}' id='{{item._id}}' mode='aspectFill' bindtap='toProduct'></image>
+  <view><text class='title' id='{{item._id}}' bindtap='toProduct'>{{item.title}}</text></view>
+  <view class='money-wrap'>
+    <text class='money'>¥{{item.money}}</text>
+    <view class='btn' id='{{item._id}}' bindtap='toProduct'>立即抢购</view>
+  </view>
+</view>
+

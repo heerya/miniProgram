@@ -1,0 +1,13 @@
+<!--pages/userlist/userlist.wxml-->
+<view class='page-wrap'>
+  <view class='user-wrap' wx:if="{{dataL.length!=0}}" wx:for='{{dataL}}' wx:key="id">
+    <image class='user-img' src='{{item.person.avatarUrl}}' id='{{item._id}}' bindtap='userMoreInfo'></image>
+    <view class='text-wrap'>
+      <view class='username'>
+        <text>{{item.realname}}</text>
+      </view>
+      <text class='tel'>{{item.tel}}</text>
+    </view>
+    <image class='icon' src='./img/right.png'></image>
+  </view>
+</view>

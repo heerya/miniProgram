@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "activity":"/components/activity/bigImg",
+    "product":"/components/store/product",
+    "tail":"/components/tail/tail"
+  },
+  "enablePullDownRefresh": true
+}

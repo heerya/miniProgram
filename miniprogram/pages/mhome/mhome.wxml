@@ -1,0 +1,80 @@
+<!--pages/mhome/mhome.wxml-->
+<view class='page-wrap'>
+  <view class='tabbar-wrap'>
+    <view class='item {{headerTab==0?"active":""}}' data-current='0' bindtap='clickTab'>商城</view>
+    <view class='item {{headerTab==1?"active":""}}' data-current='1' bindtap='clickTab'>活动</view>
+    <view wx:if='{{isAdmin}}' class='item {{headerTab==2?"active":""}}' data-current='2' bindtap='clickTab'>我的</view>
+  </view>
+  <swiper current='{{headerTab}}' duration='300' bindchange='swiperTab'>
+    <swiper-item>
+      <!-- 商品页面 -->
+      <scroll-view scroll-y style='width:100%;height:{{height}}'>
+        <view class="product-wrap">
+          <block wx:for="{{productList}}" wx:key='id'>
+            <product item="{{item}}" />
+          </block>
+        </view>
+        <!-- 底部信息 -->
+        <tail/>
+      </scroll-view>
+    </swiper-item>
+    <!-- 活动页面 -->
+    <swiper-item>
+      <scroll-view scroll-y style='width:100%;height:{{height}}'>
+        <swiper wx:if='{{newAlist.length!=0}}' class='acSwiper' indicator-dots="{{true}}" autoplay="{{true}}" interval="5000" duration="1000">
+          <block wx:for="{{newAlist}}" wx:key='id'>
+            <swiper-item class='acSwiperItem'>
+              <image src="{{item.img_id[0]}}" id='{{item._id}}' bindtap='toActivity' class="slide-image" mode='aspectFill' height="150" />
+              <view class='img-title'><text>{{item.title}}</text></view>
+            </swiper-item>
+          </block>
+        </swiper>
+        <block wx:for="{{dataL}}" wx:if="{{item.use==false}}" wx:key='id'>
+          <activity item="{{item}}" />
+        </block>
+        <!-- 底部信息 -->
+        <tail/>
+      </scroll-view>
+    </swiper-item>
+    <swiper-item wx:if='{{isAdmin}}'>
+      <!-- 管理员页面 -->
+      <scroll-view scroll-y style='width:100%;height:{{height}}'>
+        <view class='title'>商品管理</view>
+        <view class="product-wrap">
+          <view class='product' wx:for="{{productList}}" wx:key='id'>
+            <image class='mainimg' src='{{item.img_id[0]}}' id='{{item._id}}' mode='aspectFill' bindtap='toProduct'></image>
+            <view class='pro-title-wrap'>
+              <text class='title' bindtap='toProductUser' id='{{item._id}}'>{{item.title}}</text>
+            </view>
+            <view class='money-wrap'>
+              <text class='money'>¥{{item.money}}</text>
+              <button class='del' bindtap='delProduct' id='{{item._id}}'>删除</button>
+            </view>
+          </view>
+        </view>
+        <view class='title'>活动管理</view>
+        <view class='activity-wrap' wx:if="{{myList}}" wx:for="{{myList}}" wx:key="id">
+          <image src='{{item.img_id[0]}}' mode='aspectFill' bindtap='toActivity' id='{{item._id}}'></image>
+          <view class='text-wrap'>
+            <view class='title'>
+              <text bindtap='toActivityUser' id='{{item._id}}'>{{item.title}}</text>
+            </view>
+            <text class='activity-text'>{{item.maintext}}</text>
+            <view class='time'>
+              <text>{{item.edit_time}}</text>
+              <button class='change' wx:if="{{item.use==true}}" bindtap='changeUse' id='{{item._id}}'>过期</button>
+              <button class='del' wx:if="{{item.use==false}}" bindtap='delActivity' id='{{item._id}}'>删除</button>
+            </view>
+          </view>
+        </view>
+        <view class='btn-wrap'>
+          <button class='addactivity' bindtap='addActivity'>增加活动</button>
+          <button class='addProduct' bindtap='addProduct'>增加商品</button>
+          <button wx:if='{{isHighAdmin}}' class='addactivity' bindtap='addAdmin' bindtap='toAdmin'>管理员</button>
+        </view>
+        <!-- 底部信息 -->
+        <tail/>
+      </scroll-view>
+    </swiper-item>
+  </swiper>
+</view>

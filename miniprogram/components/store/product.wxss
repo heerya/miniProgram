@@ -1,0 +1,37 @@
+/* components/store/product.wxss */
+.product{
+  border: 1rpx solid #eee;
+  margin-bottom: 10rpx;
+  width: 340rpx;
+}
+.mainimg{
+  width: 340rpx;
+  height: 340rpx;
+}
+.title{
+  padding: 0 10rpx;
+  font-size: 38rpx;
+  font-weight: bold;
+  line-height: 70rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp:1;
+  -webkit-box-orient: vertical;
+}
+.money-wrap{
+  padding:20rpx 10rpx;
+}
+.money{
+  font-size: 34rpx;
+  line-height: 48rpx;
+  color: #cc0000;
+}
+.btn{
+  font-size: 28rpx;
+  color: #cc0000;
+  float: right;
+  padding: 8rpx;
+  border: 1rpx solid #cc0000;
+  border-radius: 20rpx;
+}

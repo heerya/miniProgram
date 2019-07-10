@@ -1,0 +1,15 @@
+/* pages/userinfo/userinfo.wxss */
+.userwrap{
+  display: flex;
+  flex-direction: column;
+}
+.title{
+  font-weight: 700;
+  color:#333;
+  margin: 10rpx 20rpx;
+}
+.text{
+  color: #555;
+  margin: 0 20rpx;
+  text-align: center;
+}

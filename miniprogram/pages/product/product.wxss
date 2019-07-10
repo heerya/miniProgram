@@ -1,0 +1,135 @@
+/* pages/product/product.wxss */
+/* pages/activity/activity.wxss */
+.title{
+  font-size: 40rpx;
+  font-weight: bold;
+  line-height: 70rpx;
+}
+.page-wrap{
+  padding: 30rpx;
+  height: 100vh;
+}
+.author-wrap{
+  display: flex;
+  flex-direction: row;
+  margin: 20rpx 0;
+}
+.content{
+  margin-bottom: 5rpx;
+}
+.author-wrap image{
+  width: 90rpx;
+  height: 90rpx;
+  border-radius: 50%;
+  vertical-align: middle;
+  margin-right: 20rpx;
+}
+.author-right{
+  vertical-align: middle;
+  font-size: 34rpx;
+}
+.time text{
+  line-height: 30rpx;
+  color: #666;
+}
+.content image{
+  width: 100%;
+}
+.line{
+  width: 100%;
+  height: 4rpx;
+  background-color: #ccc;
+  margin: 20rpx 0;
+}
+.hot-comment{
+  display: flex;
+  flex-direction: row;
+  margin:25rpx 0;
+}
+.hot-comment .user-image{
+  width: 90rpx;
+  height: 90rpx;
+  border-radius: 50%;
+}
+.like-wrap{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.comment{
+  padding: 0 20rpx;
+  font-size: 30rpx;
+  color: #666;
+  width: 74%;
+}
+.username{
+  display: block;
+  font-size: 34rpx;
+  color: #333;
+}
+.usertime{
+  display: block;
+  margin-bottom: 20rpx;
+}
+.like-wrap image{
+  width: 50rpx;
+  height: 50rpx;
+}
+.user-wrap text,
+.like-wrap text{
+  font-size: 30rpx;
+  color: rgba(51, 51, 51, 0.9);
+}
+.like-icon{
+  background-color: transparent;
+}
+.join-btn{
+  width: 250rpx;
+  margin: 80rpx auto;
+  background: #fff;
+  color: #333;
+  font-size: 36rpx;
+  border-color: #333;
+}
+.w-comment-wrap{
+  margin-top: 50rpx;
+  margin-bottom: 10rpx;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background: rgba(255, 255, 255,.6);
+}
+.w-comment-wrap input{
+  border-bottom: 1rpx solid #eee;
+  padding: 5rpx;
+}
+.w-comment-wrap image{
+  width: 50rpx;
+  height: 50rpx;
+  margin: 5rpx;
+}
+.time-wrap,
+.money-wrap{
+  font-size:32rpx;
+  font-weight:bold;
+  margin:20rpx;
+}
+.money-wrap .right{
+  float: right;
+}
+/* 轮播图 */
+.acSwiper{
+  min-height: 450rpx;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  margin-bottom: 20rpx;
+}
+.acSwiperItem{
+  min-height: 450rpx;
+  width: 100%;
+}
+.acSwiperItem image{
+  width: 100%;
+  height:450rpx;
+}

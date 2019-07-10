@@ -1,0 +1,23 @@
+{
+  "cloud": true,
+  "pages": [
+    "pages/index/index",
+    "pages/signup/signup",
+    "pages/userlist/userlist",
+    "pages/mhome/mhome",
+    "pages/activity/activity",
+    "pages/add_activity/add_activity",
+    "pages/userinfo/userinfo",
+    "pages/admin/admin",
+    "pages/add_product/add_product",
+    "pages/product/product",
+    "pages/paypage/paypage"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "下课后的小旅行",
+    "navigationBarTextStyle": "black"
+  },
+  "sitemapLocation": "sitemap.json"
+}

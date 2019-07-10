@@ -1,0 +1,36 @@
+.page-wrap{
+  padding: 0 40rpx;
+  font-size: 36rpx;
+}
+.title{
+  font-size: 50rpx;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 20rpx;
+}
+.input-wrap{
+  margin: 50rpx 0;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+input{
+  padding: 20rpx;
+  border-bottom: 1rpx solid #ddd;
+  font-size: 30rpx;
+  width: 77%;
+}
+textarea{
+  border: 1rpx solid #ddd;
+  padding: 20rpx;
+  width: 76%;
+}
+radio{
+  margin-left: 20rpx;
+}
+.pay-btn{
+  width: 350rpx;
+  border-color: #333;
+  font-size: 34rpx;
+  margin:50rpx auto;
+}

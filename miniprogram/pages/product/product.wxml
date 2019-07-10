@@ -1,0 +1,43 @@
+<!--pages/product/product.wxml-->
+<view class='page-wrap'>
+  <text class='title'>{{product.title}}</text>
+  <view class='content'>
+    <image wx:if='{{product.img_id.length<2}}' src='{{product.img_id[0]}}' mode='widthFix'></image>
+    <view wx:else>
+      <swiper class='acSwiper' indicator-dots="{{true}}" autoplay="{{true}}" interval="5000" duration="1000">
+        <block wx:for="{{product.img_id}}" wx:key='id'>
+          <swiper-item class='acSwiperItem'>
+            <image src="{{item}}" class="slide-image" mode='aspectFit' height="150" />
+          </swiper-item>
+        </block>
+      </swiper>
+    </view>
+    <view class='money-wrap' wx:if='{{product.money}}'>
+      <text class='left'>价格：</text><text class='right'>{{product.money}}¥</text>
+    </view>
+    <text>{{product.maintext}}</text>
+  </view>
+  <!-- <view class='new-comment-wrap' wx:if="{{commentL.length!=0}}">
+    <view class='line'></view>
+    <text class='title'>最新评论</text>
+    <view class='hot-comment' wx:for="{{commentL}}" wx:key="id">
+      <view class='user-wrap'>
+        <image class='user-image' src='{{item.author.avatarUrl}}'></image>
+      </view>
+      <view class='comment'>
+        <text class='username'>{{item.author.nickName}}</text>
+        <text class='usertime'>{{item.ctime}}1</text>
+        <text>{{item.ctext}}</text>
+      </view>
+      <view class='like-wrap'>
+        <image wx:if="{{item.like}}" class='like-icon' src='../mhome/img/like.png' bindtap='likeActivity' id='{{item._id}}'></image>
+        <image wx:else class='like-icon' src='../mhome/img/like1.png' bindtap='likeActivity' id='{{item._id}}'></image>
+        <text wx:if="{{item.likenum && item.likenum!=0}}">{{item.likenum}}</text>
+      </view>
+    </view>
+  </view> -->
+  <button class='join-btn' type='warn' bindtap='payProduct'>立即购买</button>
+    <!-- <view class='w-comment-wrap'>
+      <input type='text' placeholder='写评论...' type='text' confirm-type='send' bindconfirm='writeComment'></input>
+    </view> -->
+</view>

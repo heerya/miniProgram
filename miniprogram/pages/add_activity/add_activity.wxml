@@ -1,0 +1,47 @@
+<!--pages/add_activity/add_activity.wxml-->
+<view class='page-wrap'>
+  <view class='title'>增加活动</view>
+  <form bindsubmit='formSubmit'>
+    <view class='input-wrap'>
+      标题：
+      <input placeholder='很重要！必填！！！' type='text' name='title'></input>
+    </view>
+    <view class='input-wrap'>
+      起始日期：
+      <picker mode="date" value="{{startD}}" bindchange='bindStartDateChange' name='start_time'>
+        <view class='picker'>当前选择：{{startD}}</view>
+      </picker>
+    </view>
+    <view class='input-wrap'>
+      结束日期：
+      <picker mode="date" value="{{endD}}" bindchange='bindEndDateChange' name='end_time'>
+        <view class='picker'>当前选择：{{endD}}</view>
+      </picker>
+    </view>
+    <view class='input-wrap'>
+      摘要：
+      <input placeholder='写在标题下面的摘要' type='text' name='maintext'></input>
+    </view>
+    <view class='input-wrap'>
+      <image wx-if="{{coverImage}}" class='idcard' mode='widthFix' src="{{coverImage}}"></image>
+    </view>
+    <view class='input-wrap addimg-wrap'>
+      <view class="item" wx:for="{{images}}" wx:key="">
+        <image src="{{item}}" bindtap="previewImage" mode="aspectFill" />
+        <!-- 删除按钮 -->
+        <view class="delete" bindtap="delete" data-index="{{index}}">
+          <image src="../mhome/img/delete.png" />
+        </view>
+      </view>
+      <view class="item">
+        <image src="../mhome/img/addpic.png" class="button-upload" bindtap="uploadPicFile" />
+      </view>
+    </view>
+    <view class='input-wrap'>
+      活动费用：
+      <input placeholder='没有填0，单位¥' type='number' name='money'></input>
+    </view>
+    <button class='pay-btn' form-type='submit'>提交</button>
+  </form>
+
+</view>

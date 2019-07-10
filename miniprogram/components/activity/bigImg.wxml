@@ -1,0 +1,23 @@
+<view class='box-wrap' wx:key="id">
+  <image class='avatar' mode='aspectFill' src='{{item.img_id[0]}}' bindtap='toActivity' id='{{item._id}}'></image>
+  <view class='text-wrap'>
+    <view>
+      <text class='title' bindtap='toActivity' id='{{item._id}}'>{{item.title}}</text>
+    </view>
+    <text class='text'>{{item.maintext}}</text>
+  </view>
+  <view class='user-wrap'>
+    <view class='left'>
+      <text>{{item.author.nickName}}</text>
+    </view>
+    <view class='right'>
+      <text class='timetext'>{{item.edit_time}}</text>
+      <button open-type='share' class='sharebtn' id='{{item._id}}' data-url='{{item.mainimg}}' data-title="{{item.title}}">
+        <image class='share-icon' src='../../pages/mhome/img/share.png'></image>
+      </button>
+      <!-- <image wx:if="{{item.like}}" class='like-icon' src='../../pages/mhome/img/like.png' bindtap='likeActivity' id='{{item._id}}'></image>
+      <image wx:else class='like-icon' src='../../pages/mhome/img/like1.png' bindtap='likeActivity' id='{{item._id}}'></image>
+      <text class='likenum' wx:if="{{item.likenum && item.likenum!=0}}">{{item.likenum}}</text> -->
+    </view>
+  </view>
+</view>

@@ -1,0 +1,12 @@
+<!--components/tail/tail.wxml-->
+<view class='tail-wrap'>
+  <view class='left'>联系我们</view>
+  <view class='line'></view>
+  <view class='right'>
+    <view>微信：xiaolvxing922</view>
+    <view>公众号：下课后的小旅行</view>
+    <view>微博：@下课后的小旅行</view>
+    <view>邮箱：xiaolvxing@qq.com</view>
+    <view>地址：北京市朝阳区中国传媒大学</view>
+  </view>
+</view>

@@ -1,0 +1,28 @@
+<!--pages/paypage/paypage.wxml-->
+<view class='page-wrap'>
+  <view class='title'>请填写信息，并在付款后提交信息，才能成功购买</view>
+  <form bindsubmit='submitSignUp' report-submit='true'>
+  <view class='input-wrap'>
+    姓名：
+    <input placeholder='请输入您的真实姓名：' type='text' name='realname'></input>
+  </view>
+  <view class='input-wrap'>
+    手机：
+    <input placeholder='请输入您的手机号：' type='number' name='tel'></input>
+  </view>
+  <view class='input-wrap'>
+    微信：
+    <input placeholder='请输入您的微信号：' type='text' name='wx'></input>
+  </view>
+  <view class='input-wrap'>
+    地址：
+    <textarea auto-height placeholder="必填，最多200个字" maxlength:200 name='address' />
+  </view>
+  <view class='input-wrap'>
+    留言：
+    <textarea auto-height placeholder="可不填，最多200个字" maxlength:200 name='moretext' />
+  </view>
+  <button class='pay-btn' type='primary' bindtap='payMoney'>付款</button>
+  <button class='pay-btn' type='default' form-type='submit' disabled="{{disabled}}">提交</button>
+  </form>
+</view>

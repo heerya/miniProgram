@@ -1,0 +1,14 @@
+<!--pages/admin/admin.wxml-->
+<view class='page-wrap'>
+  <view class='user-wrap' wx:if="{{dataL.length!=0}}" wx:for='{{dataL}}' wx:key="id">
+    <image class='user-img' src='{{item.author.avatarUrl}}' id='{{item._id}}' bindtap='userMoreInfo'></image>
+    <view class='text-wrap'>
+      <view class='username'>
+        <text>{{item.author.nickName}}</text>
+      </view>
+      <text class='tel' wx:if="{{item.admin == 7}}">高级管理员</text>
+    </view>
+    <button class='del' wx:if="{{item.admin == 3}}" bindtap='delAdmin' data-id='{{item._id}}'>删除</button>
+    <button class='add' wx:if="{{item.admin == 1}}" bindtap='addAdmin' data-id='{{item._id}}'>增加</button>
+  </view>
+</view>

@@ -1,0 +1,27 @@
+/* components/tail/tail.wxss */
+.tail-wrap::after{
+  content: '';
+  display: block;
+  clear: both;
+}
+.tail-wrap{
+  padding: 50rpx 0 150rpx 0;
+}
+.left{
+  float: left;
+  width: 50rpx;
+  margin: 0 50rpx;
+  color: #ccc;
+}
+.line{
+  width: 1rpx;
+  height: 210rpx;
+  background: #eee;
+  float: left;
+  margin-right: 50rpx;
+}
+.right{
+  float: left;
+  font-size: 30rpx;
+  color: #ccc;
+}

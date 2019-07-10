@@ -1,0 +1,16 @@
+/**app.wxss**/
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 90vh;
+} 
+.page-wrap{
+  height: 100%;
+  overflow-x: hidden;
+  color: #333;
+}
+
+image{
+  background-color: #eee;
+}

@@ -1,0 +1,35 @@
+<!--pages/add_product/add_product.wxml-->
+<view class='page-wrap'>
+  <view class='title'>增加商品</view>
+  <form bindsubmit='formSubmit'>
+    <view class='input-wrap'>
+      标题：
+      <input placeholder='很重要！必填！！！' type='text' name='title'></input>
+    </view>
+    <view class='input-wrap'>
+      内容：
+      <input placeholder='写在标题下面的摘要' type='text' name='maintext'></input>
+    </view>
+    <view class='input-wrap addimg-wrap'>
+      <view class="item" wx:for="{{images}}" wx:key="">
+        <image src="{{item}}" bindtap="previewImage" mode="aspectFill" />
+        <!-- 删除按钮 -->
+        <view class="delete" bindtap="delete" data-index="{{index}}">
+          <image src="../mhome/img/delete.png" />
+        </view>
+      </view>
+      <view class="item">
+        <image src="../mhome/img/addpic.png" class="button-upload" bindtap="uploadPicFile" />
+      </view>
+    </view>
+    <view class='input-wrap'>
+      <image wx-if="{{wxImage}}" class='idcard' mode='widthFix' src="{{wxImage}}"></image>
+    </view>
+    <view class='input-wrap'>
+      价格：
+      <input placeholder='没有填0，单位¥' type='number' name='money'></input>
+    </view>
+    <button class='pay-btn' form-type='submit'>提交</button>
+  </form>
+
+</view>

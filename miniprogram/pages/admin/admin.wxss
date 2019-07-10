@@ -1,0 +1,25 @@
+/* pages/admin/admin.wxss */
+@import "../userlist/userlist";
+.text-wrap{
+  width: 388rpx;
+}
+.del{
+  color: #fff;
+  background: #cc0000;
+  font-size: 26rpx;
+  vertical-align: middle;
+  margin:10rpx 20rpx;
+  width:130rpx;
+  height: 68rpx;
+  float:right;
+}
+.add{
+  color: #333;
+  background: #fff;
+  font-size: 26rpx;
+  vertical-align: middle;
+  margin:10rpx 20rpx;
+  width:130rpx;
+  height: 68rpx;
+  float:right;
+}
