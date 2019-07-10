@@ -12,7 +12,7 @@ Page({
     dataL: [], //所有的活动
     myList: [], //自己建的活动
     newAlist:[],//有效期内的活动
-    useradmin: 0, //权限管理 3最高 1普通管理员 0用户
+    useradmin: 0, //权限管理 7最高 3普通管理员 1用户
     isAdmin: false,
     isHighAdmin: false
   },
